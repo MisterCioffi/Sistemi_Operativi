@@ -7,9 +7,9 @@ I semafori sono variabili speciali (sostanzialmente dei contatori) utilizzate pe
 
 Sono definite le seguenti operazioni:
 
-| WAIT                                                      | ![image](https://github.com/user-attachments/assets/2e741edf-9fa5-45cf-bd4b-09290d8884da)  |
+| WAIT, che ha l’effetto di decrementare il valore del semaforo. Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso;                                                    | ![image](https://github.com/user-attachments/assets/2e741edf-9fa5-45cf-bd4b-09290d8884da)  |
 |-----------------------------------------------------------|----------------------------------------------|
-| che ha l’effetto di decrementare il valore del semaforo. Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso; |
+
                 
                                              
 
