@@ -9,8 +9,8 @@ Sono definite le seguenti operazioni:
 
 | WAIT                                                      | ![Immagine](https://via.placeholder.com/100) |
 |-----------------------------------------------------------|----------------------------------------------|
-| che ha l’effetto di decrementare il valore del semaforo.  |
-Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso;                              |
+| che ha l’effetto di decrementare il valore del semaforo. Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso; |
+                
                                              
 
   - Inizializzazione della variabile ad un valore non negativo
