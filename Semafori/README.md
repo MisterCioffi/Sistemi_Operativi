@@ -6,10 +6,10 @@ I semafori sono variabili speciali (sostanzialmente dei contatori) utilizzate pe
 
 
 Sono definite le seguenti operazioni:
-  -Inizializzazione della variabile ad un valore non negativo
-    -Il valore iniziale è scelto dal programmatore in base al tipo di interazione che si vuole realizzare(mutua esclusione, cooperazione)
+  - Inizializzazione della variabile ad un valore non negativo
+    - Il valore iniziale è scelto dal programmatore in base al tipo di interazione che si vuole realizzare(mutua esclusione, cooperazione)
 
-  -Operazione di wait, che ha l’effetto di decrementare il valore del semaforo.  Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso;
+  - Operazione di wait, che ha l’effetto di decrementare il valore del semaforo.  Se il valore del semaforo diventa negativo, inserisce il processo nella coda dei processi sospesi e il processo viene sospeso;
 
-  -L’operazione di signal che ha l’effetto di incrementare il valore del semaforo. 
-    -Se il valore del semaforo diventa minore o uguale a zero(significa che c’è almeno un processo sospeso) viene “sbloccato” un     processo che si era sospeso durante l’esecuzione della wait;
+  - L’operazione di signal che ha l’effetto di incrementare il valore del semaforo. 
+    - Se il valore del semaforo diventa minore o uguale a zero(significa che c’è almeno un processo sospeso) viene “sbloccato” un     processo che si era sospeso durante l’esecuzione della wait;
