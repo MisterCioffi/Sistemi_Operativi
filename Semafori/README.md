@@ -3,3 +3,5 @@ I semafori sono variabili speciali (sostanzialmente dei contatori) utilizzate pe
 
 
 ![image](https://github.com/user-attachments/assets/2e741edf-9fa5-45cf-bd4b-09290d8884da)
+
+
