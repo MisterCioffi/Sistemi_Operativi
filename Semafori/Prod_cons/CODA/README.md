@@ -33,7 +33,7 @@ Per la **sincronizzazione** dei processi vengono utilizzati **due semafori**:
 
 ---
 
-## 📥📤 STRUTTURA DELLA CODA  
+## 🏗️ STRUTTURA DELLA CODA  
 
 La **coda** è implementata attraverso i seguenti campi:  
 
