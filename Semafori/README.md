@@ -28,8 +28,9 @@ L'operazione di `signal(s)` ha l’effetto di incrementare il valore del semafor
 
 ## Considerazioni
 
-> **ATTENZIONE** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
-> - **ATTENZIONE** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
+> ** ⚠ ATTENZIONE** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
+
+> ** ⚠ ATTENZIONE** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
 
 
 Il semafoto è una struttura dati fornita dal kernel che incapsula un contatore intero s.
