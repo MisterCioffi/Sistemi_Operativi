@@ -1,6 +1,6 @@
 # 🚦 SEMAFORI
 
-Il semaforo è una struttura dati fornita dal kernel che incapsula un contatore intero `s`.
+Il semaforo è una **struttura dati fornita dal kernel** che incapsula un contatore intero `s`.
 
 Due o più processi competono o cooperano attraverso l’uso dei segnali, in modo tale che un processo può essere forzato a sospendersi in un determinato punto finché non riceve un segnale.
 
@@ -10,7 +10,7 @@ Due o più processi competono o cooperano attraverso l’uso dei segnali, in mod
 
 ## Struttura del Semaforo
 
-Un tipo di dato astratto `s` incapsula:
+E' un tipo di dato astratto `s` incapsula:
 
 - Una variabile di tipo intero (`s.value`).
 - Una coda (`s.queue`), per tenere traccia dei processi che si sono sospesi con `wait(s)`, nell’attesa di un `signal(s)`.
@@ -28,8 +28,8 @@ L'operazione di `signal(s)` ha l’effetto di incrementare il valore del semafor
 
 ## Considerazioni
 
-- **ATTENZIONE** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
-- **ATTENZIONE** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
+> **ATTENZIONE** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
+> - **ATTENZIONE** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
 
 
 Il semafoto è una struttura dati fornita dal kernel che incapsula un contatore intero s.
