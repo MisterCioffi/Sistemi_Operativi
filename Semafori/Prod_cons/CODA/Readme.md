@@ -11,7 +11,7 @@ A tal fine, bisogna introdurre due nuovi semafori:
 
 ACHTUNG → Entrambi inizializzati a 1
 
-###GESTIONE COOPERAZIONE
+### GESTIONE COOPERAZIONE
 
 Per la sincronizzazione dei processi sono stati utilizzati due semafori,
 
