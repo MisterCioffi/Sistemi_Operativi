@@ -50,15 +50,6 @@ I **soliti due semafori**, **`SPAZIO_DISP`** e **`MSG_DISP`**, vengono utilizzat
 
 ---
 
-## 🏁 CONCLUSIONE  
-
-Questa soluzione **ottimizza l'efficienza** del sistema:  
-✔️ I **processi veloci non vengono bloccati da quelli lenti**.  
-✔️ **Migliora il parallelismo**, riducendo il tempo in mutua esclusione.  
-✔️ L'ordine **non è più circolare**, ma dipende dalla velocità dei processi.  
-
-Se hai bisogno di ulteriori modifiche o chiarimenti, dimmi pure! 🚀😊  
-
 ## 🏗️ GESTIONE DEL POOL DI BUFFER  
 
 La gestione del **pool di buffer** avviene mediante **due vettori**:
@@ -77,3 +68,14 @@ struct prodcons {
     int buffer[DIM_BUFFER];
     int stato[DIM_BUFFER];
 };
+```
+---
+
+## 🏁 IN DEFINITIVA  
+
+Questa soluzione **ottimizza l'efficienza** del sistema:  
+✔️ I **processi veloci non vengono bloccati da quelli lenti**.  
+✔️ **Migliora il parallelismo**, riducendo il tempo in mutua esclusione.  
+✔️ L'ordine **non è più circolare**, ma dipende dalla velocità dei processi.  
+
+
