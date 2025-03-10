@@ -31,4 +31,6 @@ La coda è implementata mediante i seguenti campi:
 - ***coda***– tipo intero. Indica la posizione dell’elemento prodotto meno recentemente, buffer[coda], da accedere alla prossima consumazione(lo usa il consumatore)
 
 ACHTUNG → Anche le variabili testa e coda devono essere condivise!
-```c struct prodcons { int buffer[DIM_BUFFER]; int testa; int coda; }; ```
+```c 
+struct prodcons { int buffer[DIM_BUFFER]; int testa; int coda; };
+```
