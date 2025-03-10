@@ -1,22 +1,39 @@
 
-# PROD-CONS SINGOLO BUFFER
+# 📌 PROD-CONS SINGOLO BUFFER  
 
-I vincoli imposti da un problema di tipo Produttore- Consumatore, nel caso che il ***buffer*** sia ***unico*** e che vi siano ***un solo produttore ed un solo consumatore***, sono i seguenti:
+Il problema **Produttore-Consumatore** con **buffer unico** e **un solo produttore e un solo consumatore** impone i seguenti **vincoli**:  
 
-- SPAZIO DISPONIBILE → il produttore non può produrre un messaggio se il consumatore non ha consumato il messaggio precedente, ovvero il buffer è libero.
-- MESSAGGIO DISPONIBILE → Il consumatore non può prelevare un messaggio se prima il produttore non l'ha depositato(ci deve essere qualcosa nel buffer altrimenti il consumatore non può consumare)
+### 🔴 SPAZIO DISPONIBILE  
+Il produttore non può produrre un messaggio se il consumatore non ha ancora consumato il messaggio precedente, ovvero **il buffer deve essere libero**.  
 
-Quindi abbiamo un ***problema di cooperazione*** in quanto è necessario che produttori e consumatori si coordinino per indicare rispettivamente l’avvenuto deposito e prelievo.
+### 🔵 MESSAGGIO DISPONIBILE  
+Il consumatore non può prelevare un messaggio se prima il produttore non l'ha depositato (**il buffer non può essere vuoto**).  
 
-Per la sincronizzazione dei processi produttore e consumatore si utilizzano ***due semafori***:
+> 🛠 **Questo è un problema di cooperazione**, in quanto è necessario che produttore e consumatore si **coordinino** per indicare rispettivamente **l’avvenuto deposito e il prelievo**.
 
-1. ***SPAZIO_DISP***: semaforo bloccato da un produttore prima di una produzione, e sbloccato da un consumatore in seguito ad un consumo (VALORE INIZIALE: 1)
+---
 
-2. ***MSG_DISP***: semaforo sbloccato da un produttore in seguito ad una produzione, e bloccato da un consumatore prima del consumo (VALORE INIZIALE: 0)
+## 🔄 Sincronizzazione con i Semafori  
 
-La produzione ed il consumo avvengono rispettivamente all'interno delle procedure
+Per sincronizzare produttore e consumatore, si usano **due semafori**:
 
-- ***void Produttore(msg*, int);***
-- ***void Consumatore(msg *, int);***
+### 1️⃣ `SPAZIO_DISP` 🟢  
+- **Bloccato dal produttore** prima della produzione.  
+- **Sbloccato dal consumatore** dopo il consumo.  
+- **Valore iniziale: `1`** (buffer libero all'inizio).  
 
-all'interno delle quali si effettuano anche le operazioni di ***Wait_Sem*** e ***Signal_Sem*** necessarie per la sincronizzazione
+### 2️⃣ `MSG_DISP` 🔴  
+- **Sbloccato dal produttore** dopo la produzione.  
+- **Bloccato dal consumatore** prima del consumo.  
+- **Valore iniziale: `0`** (nessun messaggio inizialmente).  
+
+---
+
+## 🖥 Funzioni Principali  
+
+La **produzione** e il **consumo** avvengono rispettivamente all'interno delle funzioni:  
+
+```c
+void Produttore(msg *, int);
+void Consumatore(msg *, int);
+
