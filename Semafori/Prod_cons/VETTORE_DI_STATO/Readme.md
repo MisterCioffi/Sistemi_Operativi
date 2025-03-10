@@ -58,3 +58,22 @@ Questa soluzione **ottimizza l'efficienza** del sistema:
 ✔️ L'ordine **non è più circolare**, ma dipende dalla velocità dei processi.  
 
 Se hai bisogno di ulteriori modifiche o chiarimenti, dimmi pure! 🚀😊  
+
+## 🏗️ GESTIONE DEL POOL DI BUFFER  
+
+La gestione del **pool di buffer** avviene mediante **due vettori**:
+
+- **`buffer[DIM]`** → Array di elementi di tipo `msg` (tipo del messaggio depositato dai produttori) contenente i valori prodotti.  
+- **`stato[DIM]`** → Array di interi, dove ogni valore `stato[i]` può assumere tre stati:  
+
+  1. **`VUOTO`** → La cella `buffer[i]` **non** contiene alcun valore prodotto.  
+  2. **`PIENO`** → La cella `buffer[i]` **contiene un valore prodotto**, non ancora consumato.  
+  3. **`IN_USO`** → La cella `buffer[i]` è **attualmente in uso** da un produttore o un consumatore.  
+
+💾 **Struttura dati in C**:
+
+```c
+struct prodcons {
+    int buffer[DIM_BUFFER];
+    int stato[DIM_BUFFER];
+};
