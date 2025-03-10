@@ -8,7 +8,7 @@ Due o più processi competono o cooperano attraverso l’uso dei segnali, in mod
 - Usando la variabile semaforo, un processo può inviare un segnale sul semaforo `s` tramite una procedura `signal(s)`.
 - Per ricevere un segnale sul semaforo si esegue la primitiva `wait(s)`: se il segnale non è stato ancora ricevuto, il processo si sospende.
 
-## Struttura del Semaforo
+## 🏗️ Struttura del Semaforo
 
 E' un tipo di dato astratto `s` incapsula:
 
