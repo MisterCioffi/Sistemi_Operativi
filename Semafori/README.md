@@ -1,4 +1,4 @@
-# SEMAFORI
+# 🚦 SEMAFORI
 
 Il semaforo è una struttura dati fornita dal kernel che incapsula un contatore intero `s`.
 
