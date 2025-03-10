@@ -32,5 +32,8 @@ La coda è implementata mediante i seguenti campi:
 
 ACHTUNG → Anche le variabili testa e coda devono essere condivise!
 ```c 
-struct prodcons { int buffer[DIM_BUFFER]; int testa; int coda; };
+struct prodcons {
+          int buffer[DIM_BUFFER];
+          int testa;
+          int coda; };
 ```
