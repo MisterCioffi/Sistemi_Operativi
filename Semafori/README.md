@@ -23,7 +23,7 @@ La variabile viene inizializzata ad un valore non negativo. Il valore iniziale �
 ### 2. Operazione di `wait`
 L'operazione di `wait(s)` ha l’effetto di decrementare il valore del semaforo. Se il valore del semaforo diventa negativo, il processo viene inserito nella coda dei processi sospesi e il processo stesso viene sospeso finché non riceve un segnale.
 
-** c
+``` c
 void wait(semaphore s) {
   s.value--;
       if (s.value<0){
@@ -31,7 +31,7 @@ void wait(semaphore s) {
       suspend(Process);
 }
 }
-**
+```
 
 ### 3. Operazione di `signal`
 L'operazione di `signal(s)` ha l’effetto di incrementare il valore del semaforo. Se il valore del semaforo diventa minore o uguale a zero (significa che c’è almeno un processo sospeso), viene "sbloccato" un processo che si era sospeso durante l’esecuzione della `wait`.
