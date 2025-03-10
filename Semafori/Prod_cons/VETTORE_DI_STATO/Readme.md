@@ -3,13 +3,10 @@
 Nelle soluzioni:
 - [CODA](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA);
 - [SINGOLO BUFFER](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER);
- i **produttori o consumatori "veloci"**  
+
+,i **produttori o consumatori "veloci"**  
 possono essere penalizzati dalla presenza di **produttori o consumatori "lenti"**.  
 Questo problema si verifica, ad esempio, quando i messaggi prodotti hanno **dimensione variabile**.  
-Come nel caso di:
-- [CODA](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA);
-- [SINGOLO BUFFER](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER);
-
 
 ---
 
