@@ -32,4 +32,4 @@ La coda è implementata mediante i seguenti campi:
 
 ACHTUNG → Anche le variabili testa e coda devono essere condivise!
 
-<pre> ```c struct prodcons { int buffer[DIM_BUFFER]; int testa; int coda; }; ``` </pre>
+``c struct prodcons { int buffer[DIM_BUFFER]; int testa; int coda; }; ```
