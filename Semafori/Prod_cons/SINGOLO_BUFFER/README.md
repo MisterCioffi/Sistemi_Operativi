@@ -13,7 +13,7 @@ Il consumatore non può prelevare un messaggio se prima il produttore non l'ha d
 
 ---
 
-## 🔄 Sincronizzazione con i Semafori  
+## 🚦 Sincronizzazione con i Semafori  
 
 Per sincronizzare produttore e consumatore, si usano **due semafori**:
 
