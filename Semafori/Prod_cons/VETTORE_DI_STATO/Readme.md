@@ -3,7 +3,7 @@
 Nella soluzione precedente, i **produttori o consumatori "veloci"**  
 possono essere penalizzati dalla presenza di **produttori o consumatori "lenti"**.  
 Questo problema si verifica, ad esempio, quando i messaggi prodotti hanno **dimensione variabile**.  
-*(Vedi [CODA](#coda-circolare) e [SINGOLO BUFFER]([SINGOLO BUFFER](../../SINGOLO_BUFFER/README.md)
+*(Vedi [CODA](#coda-circolare) e [SINGOLO BUFFER]([SINGOLO BUFFER](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER)
 )
  per maggiori dettagli).*
 
