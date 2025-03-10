@@ -47,8 +47,8 @@ void signal(semaphore s) {
 
 ```
 
-- ⚠️ ** ATTENZIONE ** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
+- ⚠️ **ATTENZIONE** → Le procedure di `wait` e `signal` eseguono in modo mutuamente esclusivo.
 
-- ⚠️ ** ATTENZIONE ** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
+- ⚠️ **ATTENZIONE** → La coda dei processi sospesi viene gestita e schedulata dal sistema operativo.
 
 
