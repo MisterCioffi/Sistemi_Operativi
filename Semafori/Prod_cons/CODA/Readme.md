@@ -1,4 +1,4 @@
-# 🔄 PROD-CONS CODA CIRCOLARE
+# 🔄 CODA CIRCOLARE
 
 In questo caso abbiamo un problema di **competizione**, perché:  
 - **Tutti i consumatori** vogliono accedere alla variabile `coda`.  
