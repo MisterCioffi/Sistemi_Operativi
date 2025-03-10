@@ -27,14 +27,25 @@ L'operazione di `wait(s)` ha l’effetto di decrementare il valore del semaforo.
 void wait(semaphore s) {
   s.value--;
       if (s.value<0){
-      s.queue.insert(Process);
-      suspend(Process);
-}
+        s.queue.insert(Process);
+        suspend(Process);
+      }
 }
 ```
 
 ### 3. Operazione di `signal`
 L'operazione di `signal(s)` ha l’effetto di incrementare il valore del semaforo. Se il valore del semaforo diventa minore o uguale a zero (significa che c’è almeno un processo sospeso), viene "sbloccato" un processo che si era sospeso durante l’esecuzione della `wait`.
+
+``` c
+void signal(semaphore s) {
+    s.value++;
+      if (s.value<=0){
+        s.queue.remove(Process);
+        wake-up(Process);
+      }
+}
+
+```
 
 ## Considerazioni
 
