@@ -1,5 +1,5 @@
 
-# 📕 SINGOLO BUFFER  
+# 📗 SINGOLO BUFFER  
 
 Il problema **Produttore-Consumatore** con **buffer unico** e **un solo produttore e un solo consumatore** impone i seguenti **vincoli**:  
 
