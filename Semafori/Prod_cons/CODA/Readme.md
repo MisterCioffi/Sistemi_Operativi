@@ -1,4 +1,4 @@
-# 🏭 PROD-CONS CODA  
+# 🔄 PROD-CONS CODA CIRCOLARE
 
 In questo caso abbiamo un problema di **competizione**, perché:  
 - **Tutti i consumatori** vogliono accedere alla variabile `coda`.  
@@ -21,7 +21,7 @@ e quindi programmate come **sezioni critiche**.
 
 ---
 
-## 🔄 GESTIONE COOPERAZIONE  
+## 🫂 GESTIONE COOPERAZIONE  
 
 Per la **sincronizzazione** dei processi vengono utilizzati **due semafori**:
 
