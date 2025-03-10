@@ -21,4 +21,6 @@ int semctl(int semid, int numero_semaforo, int cmd);
 
 ``` c
 semctl(id_sem, num_sem, IPC_RMID);
-``` 
+```
+
+> ** ATTENZIONE ** —> il campo num_sem viene ignorato —> elimina tutti i semafori dell’array identificato dall’id_sem
