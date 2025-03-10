@@ -1,39 +1,54 @@
-Questa volta abbiamo un problema di competizione perché tutti i consumatori vogliono accedere alla variabile coda mentre tutti i produttori vogliono accedere alla variabile testa.
+# 🏭 PROD-CONS CODA  
 
-### GESTIONE COMPTEZIONE
+In questo caso abbiamo un problema di **competizione**, perché:  
+- **Tutti i consumatori** vogliono accedere alla variabile `coda`.  
+- **Tutti i produttori** vogliono accedere alla variabile `testa`.  
 
-Nell’ipotesi in cui vi siano più produttori e più consumatori che accedono allo stesso buffer, le operazioni di deposito e prelievo devono essere eseguite rispettivamente in mutua esclusione, ed essere quindi programmate come sezioni critiche.
+---
 
-A tal fine, bisogna introdurre due nuovi semafori:
+## ⚔️ GESTIONE COMPETIZIONE  
 
-- ***MUTEX_C*** per le operazioni di consumo → disciplina l’accesso alle variabili condivise.
-- ***MUTEX_P*** per le operazioni di produzione
+Se ci sono **più produttori** e **più consumatori** che accedono allo stesso buffer,  
+le operazioni di **deposito** e **prelievo** devono essere eseguite in **mutua esclusione**  
+e quindi programmate come **sezioni critiche**.  
 
-ACHTUNG → Entrambi inizializzati a 1
+🔹 Per questo motivo, vengono introdotti **due nuovi semafori**:  
 
-### GESTIONE COOPERAZIONE
+- 🟢 **`MUTEX_C`** → Controlla le operazioni di **consumo** (disciplina l’accesso alle variabili condivise).  
+- 🔴 **`MUTEX_P`** → Controlla le operazioni di **produzione**.  
 
-Per la sincronizzazione dei processi sono stati utilizzati due semafori,
+> ⚠️ **Attenzione!** Entrambi devono essere **inizializzati a `1`** per garantire l’accesso esclusivo.  
 
-***SPAZIO_DISP*** → indica la presenza di spazio disponibile in coda per la produzione di
+---
 
-un messaggio( in questo caso lo spazio disponibile sarà DIM(dimensione della coda))
+## 🔄 GESTIONE COOPERAZIONE  
 
-***NUM_MESS*** → indica il numero di messaggi presenti in coda (Inizialmente sarà zero).
+Per la **sincronizzazione** dei processi vengono utilizzati **due semafori**:
 
+- **`SPAZIO_DISP`** 🏗️ → Indica la **presenza di spazio disponibile** nella coda per la produzione di un messaggio.  
+  *(Il valore iniziale è pari alla dimensione della coda `DIM_BUFFER`).*  
 
-### CODA
+- **`NUM_MESS`** 📦 → Indica il **numero di messaggi presenti in coda**.  
+  *(Il valore iniziale è `0`, perché all’inizio la coda è vuota).*  
 
-La coda è implementata mediante i seguenti campi:
+---
 
-- ***buffer[DIM]*** → array di elementi di tipo msg (tipo del messaggio depositato dai produttori) contenente i valori prodotti
-- ***testa-*** tipo intero. Indica la posizione del primo buffer libero in testa, buffer[testa], ossia il primo buffer disponibile per la memorizzazione di un messaggio. L'elemento prodotto più recentemente è alla posizione buffer[testa-1](lo usa il produttore)
-- ***coda***– tipo intero. Indica la posizione dell’elemento prodotto meno recentemente, buffer[coda], da accedere alla prossima consumazione(lo usa il consumatore)
+## 📥📤 STRUTTURA DELLA CODA  
 
-ACHTUNG → Anche le variabili testa e coda devono essere condivise!
-```c 
+La **coda** è implementata attraverso i seguenti campi:  
+
+- **`buffer[DIM]`** 📂 → Un array di elementi di tipo `msg`, che contiene i valori prodotti.  
+- **`testa`** 🔼 → Indica la posizione del **primo buffer libero** in testa, `buffer[testa]`.  
+  - L’elemento prodotto **più recentemente** si trova in `buffer[testa - 1]` *(utilizzato dal produttore)*.  
+- **`coda`** 🔽 → Indica la posizione dell’elemento **meno recente**, `buffer[coda]`, da accedere alla prossima consumazione *(utilizzato dal consumatore)*.  
+
+> ⚠️ **Attenzione!** Anche le variabili `testa` e `coda` devono essere **condivise**!  
+
+Ecco la struttura dati in **C**:  
+
+```c
 struct prodcons {
-          int buffer[DIM_BUFFER];
-          int testa;
-          int coda; };
-```
+    int buffer[DIM_BUFFER];
+    int testa;
+    int coda;
+};
