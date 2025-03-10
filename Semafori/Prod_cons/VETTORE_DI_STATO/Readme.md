@@ -1,10 +1,6 @@
 # 🚀 VETTORE DI STATO 
 
-Nelle soluzioni:
-- [CODA](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA);
-- [SINGOLO BUFFER](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER);
-
-,i **produttori o consumatori "veloci"**  possono essere penalizzati dalla presenza di **produttori o consumatori "lenti"**.  
+Nelle soluzioni basate sulla [CODA](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA) e sul [SINGOLO BUFFER](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER) i **produttori o consumatori "veloci"**  possono essere penalizzati dalla presenza di **produttori o consumatori "lenti"**.  
 Questo problema si verifica, ad esempio, quando i messaggi prodotti hanno **dimensione variabile**.  
 
 ---
