@@ -18,7 +18,7 @@ L'uso di una **coda** permette di gestire più elementi in attesa, migliorando l
 ### 📌 Vettore di Stato
 
 Il **vettore di stato** è una generalizzazione della coda, che consente un accesso più flessibile ai dati condivisi. 
-Ogni posizione del vettore ha uno stato che indica se è **libera** o **occupata**, permettendo la gestione efficiente delle risorse.
+Ogni posizione del vettore ha uno stato che indica se è **libera**, **occupata** o **in uso**, permettendo la gestione efficiente delle risorse.
 
 ## 🏁 Conclusione
 
