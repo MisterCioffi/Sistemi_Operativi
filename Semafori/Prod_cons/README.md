@@ -15,7 +15,7 @@ In questa soluzione, esiste una sola cella di memoria condivisa tra produttore e
 
 L'uso di una **coda** permette di gestire più elementi in attesa, migliorando l'efficienza rispetto al singolo buffer. 
 
-### 📌 [Vettore di Stato]
+### 📌 [Vettore di Stato](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/VETTORE_DI_STATO)
 
 Il **vettore di stato** è una generalizzazione della coda, che consente un accesso più flessibile ai dati condivisi. 
 Ogni posizione del vettore ha uno stato che indica se è **libera**, **occupata** o **in uso**, permettendo la gestione efficiente delle risorse.
