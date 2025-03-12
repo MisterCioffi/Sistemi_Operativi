@@ -11,7 +11,7 @@ Sono analizzati tre approcci principali per la gestione della comunicazione tra 
 
 In questa soluzione, esiste una sola cella di memoria condivisa tra produttore e consumatore. Il produttore scrive nel buffer e il consumatore legge da esso.
 
-### 📌 Coda[https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA]
+### 📌 [Coda](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/CODA)
 
 L'uso di una **coda** permette di gestire più elementi in attesa, migliorando l'efficienza rispetto al singolo buffer. 
 
