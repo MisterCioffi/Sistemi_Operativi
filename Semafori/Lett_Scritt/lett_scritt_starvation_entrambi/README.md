@@ -1,7 +1,6 @@
 # LETTORI E SCRITTORI CON STARVATION PER ENTRAMBI 🚶‍♂️✍️
 
-Con questo sistema, si riduce il rischio di starvation sia per i lettori che per gli scrittori. 
-Tuttavia, se un numero elevato di lettori accede costantemente alla risorsa, o se gli scrittori sono troppo frequenti, potrebbero verificarsi situazioni di starvation per uno dei due gruppi. 
+Con questo sistema, possono risentire di starvation sia i lettori che gli scrittori, infatti se  un numero elevato di lettori accede costantemente alla risorsa, o se gli scrittori sono troppo frequenti, potrebbero verificarsi situazioni di starvation per uno dei due gruppi. 
 
 In questa soluzione vengono utilizzati **4 semafori**, tutti inizializzati a 1:
 
