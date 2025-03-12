@@ -7,7 +7,7 @@ L'obiettivo è garantire un corretto accesso concorrente alle risorse condivise,
 
 Sono analizzati tre approcci principali per la gestione della comunicazione tra produttori e consumatori:
 
-### 📌 [Singolo Buffer]
+### 📌 [Singolo Buffer](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori/Prod_cons/SINGOLO_BUFFER)
 
 In questa soluzione, esiste una sola cella di memoria condivisa tra produttore e consumatore. Il produttore scrive nel buffer e il consumatore legge da esso.
 
