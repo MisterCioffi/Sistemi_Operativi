@@ -3,7 +3,7 @@
 Per la gestione di questo problema viene utilizzata una variabile condivisa `NUM_LETTORI`, che viene usata per contare il numero di lettori che contemporaneamente accedono alla risorsa.
 Solo quando NUM_LETTORI = 0, gli scrittori possono accedere (uno alla volta) alla risorsa.
 
-Poiché a questa variabile possono accedere più lettori deve essere protetta.
+⚠️ **Attenzione!** Poiché a questa variabile possono accedere più lettori deve essere protetta.
 
 ### Descrizione della Soluzione
 
