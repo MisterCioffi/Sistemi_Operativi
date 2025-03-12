@@ -3,7 +3,7 @@
 In questa soluzione la presenza di un lettore permette solo ad altri lettori di entrare, ma non permette l'ingresso agli scrittori finché non si libera la risorsa.
 Ciò comporta che se nel sistema continuano ad entrare lettori, lo scrittore subisce starvation.
 
-Per la gestione di questo problema viene utilizzata una variabile condivisa `NUM_LETTORI`, che viene usata per contare il numero di lettori che contemporaneamente accedono alla risorsa.
+In questo approccio viene utilizzata una variabile condivisa `NUM_LETTORI`, che viene usata per contare il numero di lettori che contemporaneamente accedono alla risorsa.
 Solo quando NUM_LETTORI = 0, gli scrittori possono accedere (uno alla volta) alla risorsa.
 
 ⚠️ **Attenzione!** Poiché a questa variabile possono accedere più lettori deve essere protetta.
