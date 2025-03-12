@@ -13,9 +13,9 @@ Solo quando NUM_LETTORI = 0, gli scrittori possono accedere (uno alla volta) all
 
 ### COMPORTAMENTO IN BREVE
 
-1. I lettori incrementano `NUM_LETTORI` per segnalare che stanno leggendo,
+1. I lettori incrementano `NUM_LETTORI` per segnalare che stanno leggendo.
 2. L'accesso alla variabile `NUM_LETTORI` è gestita in mutua esclusione attraverso un semaforo MUTEXL(valore iniziale pari a 1).
 3. Gli scrittori possono accedere alla risorsa solo quando `NUM_LETTORI == 0`, quindi aspettano che non ci siano lettori. Non appena tutti i lettori hanno finito, lo scrittore può entrare.
-4. Solo uno scrittore può accedere alla risorsa alla volta, grazie al semaforo SYNCH, che gestisce l'accesso esclusivo tra scrittori
+4. Solo uno scrittore può accedere alla risorsa alla volta, grazie al semaforo SYNCH, che gestisce l'accesso esclusivo tra scrittori.
 
 
