@@ -6,7 +6,7 @@
 ### 🔄 Funzionamento
 - Il processo **Q** (segnalante) invia `signal_cond()` per risvegliare il processo **P**.
 - **Q** prosegue immediatamente la sua esecuzione, mantenendo l'accesso esclusivo al monitor 🔒.
-- Il processo **P** (segnalato) non si attiva subito, ma viene trasferito nella coda associata all'ingresso del monitor 🕑.
+- Il processo **P** (segnalato) non si attiva subito, ma viene trasferito nella coda associata all'ingresso del monitor 🕑 (compete per il mutex del monitor).
 - **P** dovrà competere per il mutex del monitor con eventuali altri processi sopraggiunti.
 - Quando **P** ottiene il monitor, deve **verificare nuovamente** la condizione di sincronizzazione, poiché lo stato potrebbe essere cambiato ⏳.
 
