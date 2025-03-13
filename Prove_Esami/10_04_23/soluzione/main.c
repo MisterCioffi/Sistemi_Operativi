@@ -16,7 +16,6 @@ void produttore_1(MonitorPC * m)
 
 		int valore = rand() % 10;
 
-		/* TBD: chiamare il metodo di produzione tipo 1 */
 		produci_tipo_1(m, valore);
 
 		sleep(1);
@@ -33,7 +32,6 @@ void produttore_2(MonitorPC * m)
 
 		int valore = rand() % 10;
 
-		/* TBD: chiamare il metodo di produzione tipo 2 */
 		produci_tipo_2(m, valore);
 
 		sleep(1);
@@ -49,7 +47,6 @@ void consumatore_1(MonitorPC * m)
 
 		int valore;
 
-		/* TBD: chiamare il metodo di consumazione tipo 1 */
 		consuma_tipo_1(m, &valore);
 
 		sleep(1);
@@ -64,7 +61,6 @@ void consumatore_2(MonitorPC * m)
 
 		int valore;
 
-		/* TBD: chiamare il metodo di consumazione tipo 1 */
 		consuma_tipo_2(m, &valore);
 
 		sleep(1);
@@ -74,96 +70,70 @@ void consumatore_2(MonitorPC * m)
 int main(int argc, char *argv[])
 {
 
-	pid_t pid;
 	/* TBD: creare e inizializzare l'oggetto monitor (metodo "inizializza") */
-    
-    key_t chiaveshm=IPC_PRIVATE;
-	int id_shm= shmget(chiaveshm, sizeof(MonitorPC), IPC_CREAT|0664);
-	if(id_shm<0){
-		perror("errore shm");
-		exit(1);
-		}
-		
-	MonitorPC* m= (MonitorPC*) shmat(id_shm, 0, 0);
-	if((void*) m == (void*)-1){
-		perror("errore shm");
-		exit(1);
-		}
-		
+   
 
-		inizializza(m);
+   int id_shm = shmget(IPC_PRIVATE, sizeof(MonitorPC), IPC_CREAT | 0664);
+	MonitorPC *m = (MonitorPC*)shmat(id_shm, NULL, 0);
+	inizializza(m);
+
 
 	for(int i=0; i<2; i++) {
-  
-		/* TBD: avviare 2 produttori di tipo 1 */
-		pid=fork();
-		if(pid==0){
-			
+
+		pid_t pid = fork();
+		if(pid== 0){
 			produttore_1(m);
 			exit(0);
-			
-			}
+		}
+		/* TBD: avviare 2 produttori di tipo 1 */
 	}
 
 	for(int i=0; i<2; i++) {
 
-		/* TBD: avviare 2 produttori di tipo 2 */
-		pid=fork();
-		if(pid==0){
-			
+
+		pid_t pid = fork();
+		if(pid == 0){
 			produttore_2(m);
-			exit(0);
-			
-			}
+		}
+		/* TBD: avviare 2 produttori di tipo 2 */
 	}
 
 	/* TBD: avviare consumatore di tipo 1 */
-	pid=fork();
-		if(pid==0){
-			
-			consumatore_1(m);
-			exit(0);
-			
-			}
+
+	pid_t pidCons1 = fork();
+
+	if(pidCons1 == 0){
+		consumatore_1(m);
+		exit(0);
+	}
 
 	/* TBD: avviare consumatore di tipo 2 */
-	pid=fork();
-		if(pid==0){
-			
-			consumatore_2(m);
-			exit(0);
-			
-			}
+	pid_t pidCons2 = fork();
 
-
-
-	for(int i=0; i<2; i++) {
-
-		/* TBD: attendere terminazione produttori di tipo 1 */
-		printf("figlio consumatori 1 terminato \n");
-		wait(NULL);
+	if(pidCons2 == 0){
+		consumatore_2(m);
+		exit(0);
 	}
 
 
 	for(int i=0; i<2; i++) {
-
-		/* TBD: attendere terminazione produttori di tipo 2 */
-		printf("figlio produttori 2 terminato \n");
 		wait(NULL);
+		/* TBD: attendere terminazione produttori di tipo 1 */
+	}
+
+
+	for(int i=0; i<2; i++) {
+		wait(NULL);
+		/* TBD: attendere terminazione produttori di tipo 2 */
 	}
 
 	/* TBD: attendere terminazione consumatori di tipo 1 */
-	printf("figlio consumatori 1 terminato \n");
 	wait(NULL);
-
 	/* TBD: attendere terminazione consumatori di tipo 2 */
-	printf("figlio consumatori 2 terminato \n");
 	wait(NULL);
-
 	
 
 	/* TBD: rimuovere l'oggetto monitor */
 	rimuovi(m);
-	shmctl(id_shm, IPC_RMID, 0);
-
+	shmctl(id_shm, IPC_RMID, NULL);
 }
