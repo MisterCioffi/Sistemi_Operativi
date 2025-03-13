@@ -65,10 +65,5 @@ Ha due metodi principali:
 | **Effetto se nessun processo è in attesa** | Il valore del semaforo aumenta | `signal_cond()` non ha effetto |
 | **Gestione della sospensione** | I processi aspettano su un semaforo | I processi aspettano su una variabile condition |
 
-**Conclusione:**
-- **I semafori** sono strumenti più generici e richiedono maggiore attenzione nella gestione manuale della sincronizzazione.
-- **Le variabili condition** sono più strutturate e integrate nei monitor, facilitando la gestione della cooperazione tra processi.
-
-🔍 **In sintesi:** I monitor e le variabili condition offrono un modo più strutturato e sicuro per gestire la concorrenza rispetto ai semafori tradizionali!
 
 
