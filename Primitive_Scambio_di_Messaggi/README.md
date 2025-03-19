@@ -71,28 +71,6 @@ int msgctl(int msqid, int cmd, struct msqid_ds *buf);
 
 ---
 
-## Errori comuni 🚨
-
-Le primitive UNIX per la comunicazione sono soggette a errori difficili da individuare, tra cui:
-
-❌ **Mancanza del campo `message_type`** nella struttura dati del messaggio.
-✅ Deve sempre essere presente!
-
-❌ **Posizione errata del campo `message_type`** (non è il primo campo).
-✅ Deve sempre essere il **primo campo**.
-
-❌ **Uso errato del tipo `message_type`** (es. `int` anziché `long`).
-✅ Deve essere `long`, specialmente su architetture a 64 bit.
-
-❌ **Uso di `message_type = 0`**, che è un valore riservato.
-✅ Deve essere sempre > 0.
-
-❌ **Errore nel calcolo della dimensione del messaggio (`msgsz`)**.
-✅ Si calcola come `sizeof(messaggio) - sizeof(long)`.
-
-❌ **Errore nell’uso dei puntatori**.
-✅ Passare un puntatore corretto alla struttura `msgbuf`.
-
 Se si verificano problemi, controllare attentamente la corretta implementazione delle primitive e verificare i valori di ritorno. 🧐🔍
 
 ---
