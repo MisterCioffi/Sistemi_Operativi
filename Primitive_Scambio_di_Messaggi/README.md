@@ -71,10 +71,6 @@ int msgctl(int msqid, int cmd, struct msqid_ds *buf);
 
 ---
 
-Se si verificano problemi, controllare attentamente la corretta implementazione delle primitive e verificare i valori di ritorno. 🧐🔍
-
----
-
 ## Esempio: Richiesta/Risposta tra Client e Server 💬
 
 Un mittente può inviare una richiesta a un server e aspettarsi una risposta inserendo il proprio `PID` nel messaggio:
