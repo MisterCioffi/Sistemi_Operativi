@@ -5,7 +5,7 @@ La programmazione concorrente rappresenta un paradigma fondamentale per lo svilu
 Questo documento esplorerà i principali strumenti e tecniche utilizzati per gestire la concorrenza in C/C++, concentrandosi su meccanismi essenziali come:
 - [**SEMAFORI**](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Semafori);
 - [**MONITOR**](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Monitor);
-- [**MEMORIA CONDIVISA**]();
+- [**MEMORIA CONDIVISA**](https://github.com/MisterCioffi/Sistemi_Operativi/tree/main/Memoria_Condivisa);
 
 Verranno analizzati i loro principi di funzionamento, i vantaggi e le sfide che comportano, oltre a esempi pratici che ne illustrano l'uso.
 
